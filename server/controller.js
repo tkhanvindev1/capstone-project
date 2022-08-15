@@ -1,5 +1,5 @@
-const characters = require('./db')
-const userData = require('./userData')
+const characters = require('./db.json')
+const userData = require('./userData.json')
 
 module.exports = {
     getCharacters: (req,res) => {
