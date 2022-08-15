@@ -1,0 +1,271 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/155908.jpg" );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+}
+
+.sign-up{
+    background-image: url("https://cdnb.artstation.com/p/assets/images/images/009/483/051/large/catherine-carney-gam332-ccarney-m1-stonewall.jpg?1519243552");
+    padding: 20px;
+    color: aliceblue;
+    border:3px  solid;
+    display:flex;
+    justify-content: space-around;
+    
+}
+
+
+.nav-bar{
+    color: aliceblue;
+    display: flex;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 80px;
+}
+
+#nav-buttons{
+    align-self: center;
+    font-weight: bolder;
+    font-size: large;
+    
+}
+
+
+#characters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(89, 74, 54, 0.3) ;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px 5px;
+    
+    
+}
+
+.player-card{
+    width: 225px;
+    margin: 20px;
+    padding: 20px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    border: 8px solid rgb(240, 199, 50);
+    box-shadow: 2px 2px;
+    position: relative;
+    background-image: url("https://i.pinimg.com/originals/9a/d2/55/9ad255668870443f65a8d025e37e0d57.png");
+    -webkit-transform-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow,trasform ;
+    transition-property:  box-shadow,trasform ;
+}
+
+.player-card:hover, .player-card:focus, .player-card:active{
+    box-shadow: 0 0 20px rgba(92, 255, 47, 0.9);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+img{
+    width: 150px;
+    height: 225px;
+}
+
+#player-character {
+    /* background-color: rgb(4, 157, 17); */
+}
+
+#enemy-character{
+    /* background-color: brown; */
+}
+
+#battle-container {
+    margin: 50px;
+    background-color: rgb(89, 74, 54, 0.2);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 200px; 
+    padding-right: 200px;
+    border-radius: 4px;
+    margin-left: 300px;
+    margin-right: 300px;
+    box-shadow: 5px 5px 5px 5px;
+    
+    
+           
+}
+
+.fight-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.player-title {
+    color: rgb(241, 246, 249);
+    text-shadow: 5px;
+    
+}
+
+#play-buttons{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 40px;
+}
+
+.score-component {
+    display: flex;
+    align-self: center;
+    align-items: inline;
+    background-image: url("https://cdnb.artstation.com/p/assets/images/images/009/483/051/large/catherine-carney-gam332-ccarney-m1-stonewall.jpg?1519243552");
+    justify-content: space-evenly;
+    color: aliceblue;
+    margin-left: 200px;
+    margin-right: 200px;  
+    border: 3px  solid;
+    font-family: 'Cinzel', serif;
+
+}
+
+.game-button{
+    font-family: 'Cinzel', serif;
+    width: 200px;
+    height: 40px;
+    margin: 20px;
+    color: rgb(210, 210, 210);
+    background-color: brown;
+    border: 2px solid rgb(240, 199, 50);  
+    -webkit-transform-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow,trasform ;
+    transition-property:  box-shadow,trasform ;
+}
+
+.game-button:hover, .game-button:focus, .game-button:active{
+    box-shadow: 0 0 20px rgba(255, 205, 24, 0.7);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.char-btn {
+    width: 200px;
+    height: 40px;
+    color: rgb(210, 210, 210);
+    background-color: rgb(26, 124, 6);
+    border: 3px solid rgb(240, 199, 50);  
+    box-shadow: 2px;
+    
+}
+
+@media(max-width){
+   body, header,#characters-container {
+    flex-direction: column;
+    
+}
+}
+
+
+
+.nav-links{
+    justify-content: center;
+    align-content: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    
+}
+
+.text{
+    color: rgb(0, 0, 0);
+    
+}
+
+.nav-buttons{
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    background-color: none;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: aliceblue;
+}
+
+
+#about, #rules {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 11;
+    background-color: rgb(225, 225, 225);
+    width:  800px;
+    max-width:  80%;
+    pointer-events: none;
+}
+
+#about.active, #rules.active {
+opacity: 1;
+transform: translate(-35%, -35%);
+}
+
+.content-header {
+    font-size: 2rem;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    font-weight: bold;
+}
+
+.close-rules-button, .close-about-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.content-body {
+    padding: 30px 30px;
+    font-size: 1.25rem;
+    opacity: 0.7;
+}
+
+#overlay{
+ position: fixed;
+ opacity: 0;
+ transition: 200ms ease-in-out;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: rgba(0,0,0, .5);
+ pointer-events: none;
+}
+
+#overlay.active {
+opacity: 1;
+pointer-events:all;
+z-index: 10;
+}
+
+
+
+
+
+

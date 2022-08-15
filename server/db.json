@@ -1,0 +1,54 @@
+[
+ {
+  "id": 0,
+  "name":"SWORD MASTER",
+  "imgUrl": "https://i.pinimg.com/236x/63/ab/44/63ab44116b595a096b78f01a5514a2ae.jpg",
+  "health": 100,
+  "defend": 10,
+  "attack": 35
+ },
+ {
+  "id": 1,
+  "name":"SOUL HUNTER",
+  "imgUrl": "https://i.pinimg.com/236x/d9/c9/30/d9c930e683536086c57546392d29feeb.jpg",
+  "health": 100,
+  "defend": 5,
+  "attack": 40
+ },
+
+ {
+  "id": 2,
+  "name":"WINTER WARRIOR",
+  "imgUrl": "https://i.pinimg.com/236x/1e/d3/d1/1ed3d1e98865f5c90f6b702b11f2ce13.jpg",
+  "health": 100,
+  "defend": 15,
+  "attack": 20
+ },
+
+ {
+  "id": 3,
+  "name":"SILENCER",
+  "imgUrl": "https://i.pinimg.com/236x/af/5b/1d/af5b1daac1e0df73954f8549541c9beb.jpg",
+  "health": 100,
+  "defend": 5,
+  "attack": 35
+ },
+
+ {
+  "id": 4,
+  "name":"THOR",
+  "imgUrl": "https://i.pinimg.com/236x/d9/50/93/d95093ef6278160545f265afeb7eec1a.jpg",
+  "health": 100,
+  "defend": 15,
+  "attack": 20
+ },
+
+ {
+  "id": 5,
+  "name":"WARLORD",
+  "imgUrl": "https://i.pinimg.com/236x/7c/11/15/7c1115619bea4fe8334df694772092c0.jpg",
+  "health": 100,
+  "defend": 5,
+  "attack": 25
+ }
+]

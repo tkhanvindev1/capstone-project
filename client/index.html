@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@100;500&family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main>
+<form class="sign-up">
+    <div id="user-div">
+    <h2>Create account</h2>
+    username: <input id="username" type="text" placeholder="type username here"/>
+    password: <input id="password" type="password" placeholder="type password here"/>
+    email: <input id="email" type="text" placeholder="type email here"/>
+    <button type="button" id="submit-button" type="text">submit</button>
+    </div>
+    <div class="nav-bar">
+      <button type="button" class="nav-buttons" id="about-button">About</button>
+      <button type="button" class="nav-buttons" id="rules-button">Rules</button>
+    </div>
+</form>
+<br>
+<br>
+<div id="about">
+    <div class="content-header">
+     <div class="title">About</div>
+     <button type="button" id="close-about-button" class="close-about-button">&times;</button>
+    </div>
+    <div class="content-body">
+        This mini-game was created as a capstone project for my foundation at DevMountain.
+        The idea is to create an RPG battle card game. My goal was to show that I can build a solo 
+        project from the scratch, based on the knowledge I learn during my foundation course.
+        The process was challenging but fun. I add some cool CSS animation and sound effects so users
+        can experience the whole feel of the theme of my game.
+    
+    </div>
+</div>
+
+<div id="overlay"></div>
+
+<div id="rules">
+    <div class="content-header">
+         <div class="title">Rules</div>
+         <button type="button" id="close-rules-button" class="close-rules-button">&times;</button>
+         </div>
+         <div class="content-body">1. Create your account and hit submit<br>
+            <br>
+            2. Hit the "ENTER HERE" button to open the character selection window<br>
+            <br>
+            3. Select your character by pressing the "SELECT" button<br>
+            <br>
+            4. Next you need to have an enemy opponent, click "JOIN BATTLE" to reveal your opponent<br>
+            <br>
+            5. Click at "ATTACK" button to start a duel<br>
+            <br>
+            6. Click the "PLAY AGAIN" button to reset the game
+         </div>
+   </div> 
+<section id="characters-container">
+<button class="game-button" id="show-btn">ENTER HERE</button>
+</section>
+
+<section id="battle-container">
+
+<section class="fight-card" id="player-character">
+<h2 class="player-title">Your Champion:</h2>
+<div id="player-character-div" class="character-div"></div>
+</section>
+
+<section  class="fight-card" id="enemy-character">
+<h2 class="player-title">Your Enemy:</h2>
+<div id="enemy-character-div" class="character-div"></div>
+
+</section>
+</section>
+
+<section id="play-buttons">
+<label id="play">
+    <button class="game-button" id="play-button">JOIN BATTLE</button>
+</label>
+
+<label id="attack">
+    <button class="game-button" id="attack-button">ATTACK</button>
+</label>
+
+<label id="play-again"> 
+    <button class="game-button" id="play-again">PLAY AGAIN</button>
+</label>
+</section>
+<div class="score-component">
+  <h3 class="score-result">WIN:</h3>
+  <h3 class="score-point" id="win-score" > 0</h3>
+  <h3 class="score-result">LOST: </h3>
+  <h3 class="score-point" id="lost-score" > 0</h3>
+</div>
+
+</main>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./index.js"></script>    
+</body>
+</html>
