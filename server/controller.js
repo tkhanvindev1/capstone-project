@@ -3,9 +3,7 @@ const userData = require('./userData.json')
 
 module.exports = {
     getCharacters: (req,res) => {
-        console.log(characters)
-        res.status(200).send(characters)
-        console.log('GET REQUEST ENDPOINT TOUCHDOWN!')
+        res.sendFile(path.join(__dirname, '../client/index.js'))
     },
 
     postUser: (req,res) => {
