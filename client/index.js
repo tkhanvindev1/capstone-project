@@ -92,7 +92,7 @@ let playerCharIndex = undefined
 
 
 
-const baseURL = `http://localhost:4000/api`
+const baseURL = `/api`
 
 const charactersCallback = ({ data: characters }) => displayCharacters(characters)
 const errCallback = err => console.log(err.response.data)
