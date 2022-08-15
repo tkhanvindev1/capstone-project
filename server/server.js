@@ -15,5 +15,5 @@ const { getCharacters, postUser } = require('./controller')
 app.get(`/api/characters`, getCharacters)
 app.post(`/api/user`, postUser)
 
-const port = process.env.PORT || 4000
-app.listen(port, () => console.log(`running on 4000`))
+const PORT = process.env.PORT || 4000
+app.listen(PORT, () => console.log(`running on 4000`))
