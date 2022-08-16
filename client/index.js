@@ -130,14 +130,7 @@ function showPlayerChar(id) {
   indexOfSelectedPlayer.push(playerIndex);
   let selectedPlayer = selectedCharacterArr[id];
   //reset function to remove current function
-  function resetPlayer() {
-    if(playerDiv.appendChild(selectedPlayerCard)){
-    let playerCard = document.getElementById("player-id")
-    playerDiv.removeChild(playerCard);   
-    }
-    return playerDiv
-    }
-  resetPlayer();
+  
   //character creation
   const selectedPlayerCard = document.createElement("div");
   selectedPlayerCard.classList.add("player-card");
