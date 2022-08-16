@@ -3,7 +3,7 @@ const userData = require('./userData.json')
 
 module.exports = {
     getCharacters: (req,res) => {
-        res.sendFile(path.join(__dirname, '../client/index.js'))
+        res.status(200).send(characters)
     },
 
     postUser: (req,res) => {
