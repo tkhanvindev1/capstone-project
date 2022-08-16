@@ -73,6 +73,7 @@ body {
 img{
     width: 150px;
     height: 225px;
+    align-self: center;
 }
 
 #player-character {
