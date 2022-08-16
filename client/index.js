@@ -145,8 +145,7 @@ characterContainer.appendChild(characterCard)
 
 
 function showPlayerChar(id) {
- let playerCard = document.getElementById("player-id")
- playerDiv.removeChild(playerCard)
+ 
  let playerIndex = id
  indexOfSelectedPlayer.push(playerIndex)
  let selectedPlayer = selectedCharacterArr[id]  
@@ -168,7 +167,6 @@ function showPlayerChar(id) {
 }
 
 function showEnemyChar () {
-    enemyPlayer = []
     playerCharIndex = indexOfSelectedPlayer[0]
     enemyCharacterArr = selectedCharacterArr
     removedIdCharacter = enemyCharacterArr.splice(playerCharIndex, 1)
