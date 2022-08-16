@@ -86,7 +86,7 @@ let userPlayer = []
 let enemyPlayer = []
 let winScore = []
 let lostScore = []
-let indexOfSelectedPlayer = []
+// let indexOfSelectedPlayer = []
 let removedIdCharacter = undefined
 let playerCharIndex = undefined
 
@@ -145,7 +145,7 @@ characterContainer.appendChild(characterCard)
 
 
 function showPlayerChar(id) {
- indexOfSelectedPlayer = []
+ let indexOfSelectedPlayer = []
  let playerIndex = id
  indexOfSelectedPlayer.push(playerIndex)
  let selectedPlayer = selectedCharacterArr[id]  
