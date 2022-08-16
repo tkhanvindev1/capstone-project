@@ -1,5 +1,3 @@
-const e = require("cors");
-
 const characterContainer = document.getElementById("characters-container");
 const showBtn = document.getElementById("show-btn");
 const playerDiv = document.getElementById("player-character-div");
