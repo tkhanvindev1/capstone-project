@@ -145,6 +145,7 @@ characterContainer.appendChild(characterCard)
 
 
 function showPlayerChar(id) {
+ indexOfSelectedPlayer = []
  let playerIndex = id
  indexOfSelectedPlayer.push(playerIndex)
  let selectedPlayer = selectedCharacterArr[id]  
