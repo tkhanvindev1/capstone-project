@@ -203,7 +203,6 @@ const figthResult = () => {
     
     if(playerDamage > enemyDamage){
         winScore.push(parseInt(1))
-        console.log('You won!')
         setTimeout(function(){    
         alert('You won!')
         },2000)
@@ -216,7 +215,6 @@ const figthResult = () => {
 
     const showScore = () => {
         let winResult = document.getElementById('win-score')
-        console.log(winScore.length)
         winResult.innerHTML = `${(winScore.length)}`
         let lostResult = document.getElementById('lost-score')
         lostResult.innerHTML = `${(lostScore.length)}`
