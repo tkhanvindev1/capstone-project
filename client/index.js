@@ -166,10 +166,6 @@ function showPlayerChar(id) {
 }
 
 function showEnemyChar () {
-    let resetSound = new Audio()
-    resetSound.src = "./sword.mp3"
-    resetSound.play()
-    
     playerCharIndex = indexOfSelectedPlayer[0]
     enemyCharacterArr = selectedCharacterArr
     removedIdCharacter = enemyCharacterArr.splice(playerCharIndex, 1)
@@ -271,7 +267,6 @@ function displayCharacters(arr) {
 
     selectedCharacterArr = arr
     characterContainer.innerHTML = ``
-    console.log(arr)
     for (let i = 0; i < arr.length; i++) {
         createCharacterCard(arr[i])
         
