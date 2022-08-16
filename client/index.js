@@ -166,6 +166,10 @@ function showPlayerChar(id) {
 }
 
 function showEnemyChar () {
+    let resetSound = new Audio()
+    resetSound.src = "./sword.mp3"
+    resetSound.play()
+    
     playerCharIndex = indexOfSelectedPlayer[0]
     enemyCharacterArr = selectedCharacterArr
     removedIdCharacter = enemyCharacterArr.splice(playerCharIndex, 1)
