@@ -208,29 +208,18 @@ const figthResult = () => {
   showScore();
 };
 
-function idChecker (id) {
-if(document.body.contains(document.getElementById((id)))){
-  return true
-}else{
-  return false
-}
+function idChecker(id) {
+  if (document.body.contains(document.getElementById(id))) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-const resetPlay = () => {
+function emptyBattleContainer() {
   let resetSound = new Audio();
   resetSound.src = "./sword.mp3";
   resetSound.play();
-  
-  //work on a bug!
-  let enemyStatus = idChecker(("enemy-id"))
-  if (enemyStatus == false){
-    alert ("Please PRESS JOIN BATTLE to add an enemy!")
-  }else{
-  //
-  let enemyCard = document.getElementById("enemy-id");
-  enemyDiv.removeChild(enemyCard);
-  let playerCard = document.getElementById("player-id");
-  playerDiv.removeChild(playerCard);
   enemyCharacterArr.splice(playerCharIndex, 0, removedIdCharacter);
   enemyCharacterArr = [];
   userPlayer = [];
@@ -238,6 +227,27 @@ const resetPlay = () => {
 
   indexOfSelectedPlayer = [];
   getAllCharacters();
+}
+
+const resetPlay = () => {
+  //work on a bug!
+  let enemyStatus = idChecker("enemy-id");
+  let playerStatus = id("player-id");
+
+  if (enemyStatus == false) {
+    alert("Please PRESS JOIN BATTLE to add an enemy!");
+  } else {
+    let enemyCard = document.getElementById("enemy-id");
+    enemyDiv.removeChild(enemyCard);
+    emptyBattleContainer();
+  }
+
+  if (playerStatus == false) {
+    alert("Please SELECT your champion!");
+  } else {
+    let playerCard = document.getElementById("player-id");
+    playerDiv.removeChild(playerCard);
+    emptyBattleContainer();
   }
 };
 
