@@ -213,10 +213,11 @@ const resetPlay = () => {
   resetSound.src = "./sword.mp3";
   resetSound.play();
 
-  if (indexOfSelectedPlayer.length !== 0) {
-    return alert("SELECT your champion please!");
-  } else if (enemyCharacterArr.length !== 0) {
-    return alert("Press JOIN BATTLE to add an enemy card!");
+  //work on a bug!
+  if (selectedPlayerCard == null) {
+    alert("Please SELECT your champion!");
+  } else if (enemyPlayerCard == null) {
+    alert("Please PRESS JOIN BATTLE button to add an enemy!");
   }
 
   let enemyCard = document.getElementById("enemy-id");
