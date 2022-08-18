@@ -210,9 +210,9 @@ const figthResult = () => {
 
 function idChecker (id) {
 if(document.body.contains(document.getElementById(id))){
-  return
+  return true
 }else{
-  alert('Please PRESS Join Battle button to add an enemy!')
+  return false
 }
 }
 
@@ -222,10 +222,15 @@ const resetPlay = () => {
   resetSound.play();
 
   //work on a bug!
-  idChecker("enemy-id")
+  if (idChecker("enemy-id") = true){
+    console.log(idChecker("enemy-id"))
+    let enemyCard = document.getElementById("enemy-id");
+    enemyDiv.removeChild(enemyCard);
+  }else{
+    alert ("Please PRESS JOIN BATTLE to add an enemy!")
+  }
   //
-  let enemyCard = document.getElementById("enemy-id");
-  enemyDiv.removeChild(enemyCard);
+  
   let playerCard = document.getElementById("player-id");
   playerDiv.removeChild(playerCard);
   enemyCharacterArr.splice(playerCharIndex, 0, removedIdCharacter);
