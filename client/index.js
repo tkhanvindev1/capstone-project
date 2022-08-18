@@ -239,7 +239,7 @@ const resetPlay = () => {
   } else {
     let enemyCard = document.getElementById("enemy-id");
     enemyDiv.removeChild(enemyCard);
-    emptyBattleContainer();
+    emptyBattleContainer("enemy-id");
   }
 
   if (playerStatus == false) {
@@ -247,7 +247,7 @@ const resetPlay = () => {
   } else {
     let playerCard = document.getElementById("player-id");
     playerDiv.removeChild(playerCard);
-    emptyBattleContainer();
+    emptyBattleContainer("player-id");
   }
 };
 
