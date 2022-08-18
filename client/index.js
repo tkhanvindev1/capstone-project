@@ -223,14 +223,12 @@ const resetPlay = () => {
   
   //work on a bug!
   let enemyStatus = idChecker(("enemy-id"))
-  if (enemyStatus == true){
-    let enemyCard = document.getElementById("enemy-id");
-    enemyDiv.removeChild(enemyCard);
-  }else{
+  if (enemyStatus == false){
     alert ("Please PRESS JOIN BATTLE to add an enemy!")
-  }
+  }else{
   //
-  
+  let enemyCard = document.getElementById("enemy-id");
+  enemyDiv.removeChild(enemyCard);
   let playerCard = document.getElementById("player-id");
   playerDiv.removeChild(playerCard);
   enemyCharacterArr.splice(playerCharIndex, 0, removedIdCharacter);
@@ -240,6 +238,7 @@ const resetPlay = () => {
 
   indexOfSelectedPlayer = [];
   getAllCharacters();
+  }
 };
 
 function displayCharacters(arr) {
