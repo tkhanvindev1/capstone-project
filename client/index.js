@@ -215,6 +215,7 @@ if(document.body.contains(document.getElementById(id))){
   return false
 }
 }
+console.log(idChecker("enemy-id"))
 
 const resetPlay = () => {
   let resetSound = new Audio();
@@ -258,4 +259,4 @@ showBtn.addEventListener("click", getAllCharacters);
 playBtn.addEventListener("click", showEnemyChar);
 submitBtn.addEventListener("click", createUser);
 attackBtn.addEventListener("click", figthResult);
-resetBtn.addEventListener("click", resetPlay);
+resetBtn.addEventListener("click", idChecker);
