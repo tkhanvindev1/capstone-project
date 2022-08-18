@@ -156,7 +156,6 @@ function showEnemyChar() {
   enemyCharacterArr = selectedCharacterArr;
   removedIdCharacter = enemyCharacterArr.splice(playerCharIndex, 1);
 
- 
   let randomIndex = Math.floor(Math.random() * enemyCharacterArr.length);
   let randomEnemyCharacter = enemyCharacterArr[randomIndex];
   const enemyPlayerCard = document.createElement("div");
@@ -215,9 +214,9 @@ const resetPlay = () => {
   resetSound.play();
 
   if (indexOfSelectedPlayer.length !== 0) {
-    alert ("SELECT your champion please!")
-  } else if(enemyCharacterArr.length !== 0){
-    alert ("Press JOIN BATTLE to add an enemy card!")
+    return alert("SELECT your champion please!");
+  } else if (enemyCharacterArr.length !== 0) {
+    return alert("Press JOIN BATTLE to add an enemy card!");
   }
 
   let enemyCard = document.getElementById("enemy-id");
