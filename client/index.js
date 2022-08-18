@@ -258,4 +258,4 @@ showBtn.addEventListener("click", getAllCharacters);
 playBtn.addEventListener("click", showEnemyChar);
 submitBtn.addEventListener("click", createUser);
 attackBtn.addEventListener("click", figthResult);
-resetBtn.addEventListener("click", idChecker);
+resetBtn.addEventListener("click", resetPlay);
