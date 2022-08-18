@@ -132,9 +132,6 @@ function showPlayerChar(id) {
   }
   indexOfSelectedPlayer.push(id);
   let selectedPlayer = selectedCharacterArr[id];
-  //reset function to remove current function
-
-  //character creation
   const selectedPlayerCard = document.createElement("div");
   selectedPlayerCard.classList.add("player-card");
   selectedPlayerCard.setAttribute("id", "player-id");
@@ -151,10 +148,15 @@ function showPlayerChar(id) {
 }
 
 function showEnemyChar() {
+  if (enemyCharacterArr.length !== 0) {
+    let enemyCard = document.getElementById("enemy-id");
+    enemyDiv.removeChild(enemyCard);
+  }
   playerCharIndex = indexOfSelectedPlayer[0];
   enemyCharacterArr = selectedCharacterArr;
   removedIdCharacter = enemyCharacterArr.splice(playerCharIndex, 1);
 
+ 
   let randomIndex = Math.floor(Math.random() * enemyCharacterArr.length);
   let randomEnemyCharacter = enemyCharacterArr[randomIndex];
   const enemyPlayerCard = document.createElement("div");
