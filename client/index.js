@@ -232,7 +232,7 @@ function emptyBattleContainer() {
 const resetPlay = () => {
   //work on a bug!
   let enemyStatus = idChecker("enemy-id");
-  let playerStatus = id("player-id");
+  let playerStatus = idChecker("player-id");
 
   if (enemyStatus == false) {
     alert("Please PRESS JOIN BATTLE to add an enemy!");
