@@ -126,11 +126,14 @@ function createCharacterCard(characters) {
 }
 
 function showPlayerChar(id) {
-  let playerIndex = id;
-  indexOfSelectedPlayer.push(playerIndex);
+  if (indexOfSelectedPlayer.length !== 0) {
+    let playerCard = document.getElementById("player-id");
+    playerDiv.removeChild(playerCard);
+  }
+  indexOfSelectedPlayer.push(id);
   let selectedPlayer = selectedCharacterArr[id];
   //reset function to remove current function
-  
+
   //character creation
   const selectedPlayerCard = document.createElement("div");
   selectedPlayerCard.classList.add("player-card");
