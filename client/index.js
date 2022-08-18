@@ -208,18 +208,22 @@ const figthResult = () => {
   showScore();
 };
 
+function idChecker (id) {
+if(document.body.contains(document.getElementById(id))){
+  return
+}else{
+  alert('Please PRESS Join Battle button to add an enemy!')
+}
+}
+
 const resetPlay = () => {
   let resetSound = new Audio();
   resetSound.src = "./sword.mp3";
   resetSound.play();
 
   //work on a bug!
-  if (selectedPlayerCard == null) {
-    alert("Please SELECT your champion!");
-  } else if (enemyPlayerCard == null) {
-    alert("Please PRESS JOIN BATTLE button to add an enemy!");
-  }
-
+  idChecker("enemy-id")
+  //
   let enemyCard = document.getElementById("enemy-id");
   enemyDiv.removeChild(enemyCard);
   let playerCard = document.getElementById("player-id");
