@@ -209,22 +209,21 @@ const figthResult = () => {
 };
 
 function idChecker (id) {
-if(document.body.contains(document.getElementById(id))){
+if(document.body.contains(document.getElementById((id)))){
   return true
 }else{
   return false
 }
 }
-console.log(idChecker("enemy-id"))
 
 const resetPlay = () => {
   let resetSound = new Audio();
   resetSound.src = "./sword.mp3";
   resetSound.play();
-
+  
   //work on a bug!
-  if (idChecker("enemy-id") = true){
-    console.log(idChecker("enemy-id"))
+  let enemyStatus = idChecker(("enemy-id"))
+  if (enemyStatus == true){
     let enemyCard = document.getElementById("enemy-id");
     enemyDiv.removeChild(enemyCard);
   }else{
