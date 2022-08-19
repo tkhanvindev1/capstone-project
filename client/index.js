@@ -176,6 +176,8 @@ function showEnemyChar() {
   enemyDiv.appendChild(enemyPlayerCard);
   enemyPlayer.push(randomEnemyCharacter);
 }
+
+
 function idChecker(id) {
   if (document.body.contains(document.getElementById(id))) {
     return true;
@@ -183,15 +185,15 @@ function idChecker(id) {
     return false;
   }
 }
-
 let enemyStatus = idChecker("enemy-id");
 let playerStatus = idChecker("player-id");
+
 
 const figthResult = () => {
 console.log(enemyStatus)
 console.log(playerStatus)
 
-  if (enemyStatus == false && playerStatus == false) {
+  if (enemyStatus == false || playerStatus == false) {
     return alert(
       "Please SELECT you champion and PRESS JOIN BATTLE to add an enemy!"
     );
