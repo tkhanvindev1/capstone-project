@@ -112,10 +112,10 @@ const getAllCharacters = () =>
     .catch(errCallback);
 
 function createCharacterCard(characters) {
-  console.log(characters)
+  console.log(characters);
   const characterCard = document.createElement("div");
   characterCard.classList.add("player-card");
-  characterCard.setAttribute("id", `${characters.id}`)
+  characterCard.setAttribute("id", `${characters.id}`);
   characterCard.innerHTML = `<section id=${characters.id} ><img alt='char img' src=${characters.imgUrl} class="character-img"/>
     <p class="character-name">Name: ${characters.name}</p>
     <p class="character-health">Health: ${characters.health}</p>
@@ -127,7 +127,13 @@ function createCharacterCard(characters) {
   characterContainer.appendChild(characterCard);
 }
 
+function removeCharacterCard(id) {
+  let playerCard = document.getElementById(`${id}`);
+  characterContainer.removeChild(playerCard);
+}
+
 function showPlayerChar(id) {
+  removeCharacterCard(id);
   if (indexOfSelectedPlayer.length !== 0) {
     let playerCard = document.getElementById("player-id");
     playerDiv.removeChild(playerCard);
@@ -147,8 +153,6 @@ function showPlayerChar(id) {
 
   playerDiv.appendChild(selectedPlayerCard);
   userPlayer.push(selectedPlayer);
-
-
 }
 
 function showEnemyChar() {
