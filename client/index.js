@@ -185,11 +185,12 @@ function idChecker(id) {
     return false;
   }
 }
-let enemyStatus = idChecker("enemy-id");
-let playerStatus = idChecker("player-id");
 
 
 const figthResult = () => {
+  let enemyStatus = idChecker("enemy-id");
+let playerStatus = idChecker("player-id");
+
 console.log(enemyStatus)
 console.log(playerStatus)
 
