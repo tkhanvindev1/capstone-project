@@ -133,6 +133,7 @@ function removeCharacterCard(id) {
 }
 
 function scrollToBattleContainer () {
+  console.log("scroll")
 var myElement = document.getElementById("battle-container");
 var viewPosition = myElement.offsetTop;
 document.getElementById("battle-container").scrollTop = viewPosition
@@ -291,3 +292,4 @@ playBtn.addEventListener("click", showEnemyChar);
 submitBtn.addEventListener("click", createUser);
 attackBtn.addEventListener("click", figthResult);
 resetBtn.addEventListener("click", resetPlay);
+window.addEventListener("scroll", scrollToBattleContainer)
