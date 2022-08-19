@@ -186,10 +186,11 @@ function idChecker(id) {
 
 let enemyStatus = idChecker("enemy-id");
 let playerStatus = idChecker("player-id");
+
+const figthResult = () => {
 console.log(enemyStatus)
 console.log(playerStatus)
 
-const figthResult = () => {
   if (enemyStatus == false && playerStatus == false) {
     return alert(
       "Please SELECT you champion and PRESS JOIN BATTLE to add an enemy!"
