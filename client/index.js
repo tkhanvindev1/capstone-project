@@ -114,6 +114,7 @@ const getAllCharacters = () =>
 function createCharacterCard(characters) {
   const characterCard = document.createElement("div");
   characterCard.classList.add("player-card");
+  characterCard.setAttribute("id", `${characters[i]}`)
   characterCard.innerHTML = `<section id=${characters.id} ><img alt='char img' src=${characters.imgUrl} class="character-img"/>
     <p class="character-name">Name: ${characters.name}</p>
     <p class="character-health">Health: ${characters.health}</p>
@@ -145,6 +146,8 @@ function showPlayerChar(id) {
 
   playerDiv.appendChild(selectedPlayerCard);
   userPlayer.push(selectedPlayer);
+
+
 }
 
 function showEnemyChar() {
@@ -177,7 +180,6 @@ function showEnemyChar() {
   enemyPlayer.push(randomEnemyCharacter);
 }
 
-
 function idChecker(id) {
   if (document.body.contains(document.getElementById(id))) {
     return true;
@@ -186,13 +188,9 @@ function idChecker(id) {
   }
 }
 
-
 const figthResult = () => {
   let enemyStatus = idChecker("enemy-id");
-let playerStatus = idChecker("player-id");
-
-console.log(enemyStatus)
-console.log(playerStatus)
+  let playerStatus = idChecker("player-id");
 
   if (enemyStatus == false || playerStatus == false) {
     return alert(
@@ -244,15 +242,17 @@ function emptyBattleContainer() {
 }
 
 const resetPlay = () => {
+  let enemyStatus = idChecker("enemy-id");
+  let playerStatus = idChecker("player-id");
   //work on a bug!
   if (enemyStatus == false && playerStatus === false) {
     return alert(
       "Please SELECT you champion and PRESS JOIN BATTLE to add an enemy!"
     );
   } else {
-  let resetSound = new Audio();
-  resetSound.src = "./sword.mp3";
-  resetSound.play();
+    let resetSound = new Audio();
+    resetSound.src = "./sword.mp3";
+    resetSound.play();
     emptyBattleContainer();
   }
 };
