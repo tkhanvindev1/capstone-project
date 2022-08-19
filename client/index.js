@@ -133,7 +133,6 @@ function removeCharacterCard(id) {
 }
 
 function scrollToBattleContainer (element) {
-  element.preventDefault();
   element.scroll({ top: element.scrollHeigth, behavior: "smooth"})
 }
 
