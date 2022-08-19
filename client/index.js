@@ -132,13 +132,15 @@ function removeCharacterCard(id) {
   characterContainer.removeChild(playerCard);
 }
 
-function scrollToBattleContainer (element) {
-  element.scroll({ top: element.scrollHeigth, behavior: "smooth"})
+function scrollToBattleContainer () {
+var myElement = document.getElementById("battle-container");
+var viewPosition = myElement.offsetTop;
+document.getElementById("battle-container").scrollTop = viewPosition
 }
 
 function showPlayerChar(id) {
   removeCharacterCard(id);
-  scrollToBattleContainer(battleContainer)
+  scrollToBattleContainer()
 
   let resetSound = new Audio();
   resetSound.src = "./sword.mp3";
