@@ -176,27 +176,50 @@ function showEnemyChar() {
   enemyDiv.appendChild(enemyPlayerCard);
   enemyPlayer.push(randomEnemyCharacter);
 }
+function idChecker(id) {
+  if (document.body.contains(document.getElementById(id))) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function idChecker(id) {
+  if (document.body.contains(document.getElementById(id))) {
+    return true;
+  } else {
+    return false;
+  }
+}
+let enemyStatus = idChecker("enemy-id");
+let playerStatus = idChecker("player-id");
 
 const figthResult = () => {
-  let selectSound = new Audio();
-  selectSound.src = "./attack.mp3";
-  selectSound.play();
-
-  userPlayer = userPlayer[0];
-  enemyPlayer = enemyPlayer[0];
-  let playerDamage = parseInt(userPlayer.attack - enemyPlayer.defend);
-  let enemyDamage = parseInt(enemyPlayer.attack - userPlayer.defend);
-
-  if (playerDamage > enemyDamage) {
-    winScore.push(parseInt(1));
-    setTimeout(function () {
-      alert("You won!");
-    }, 2000);
+  if (enemyStatus == false && playerStatus == false) {
+    return alert(
+      "Please SELECT you champion and PRESS JOIN BATTLE to add an enemy!"
+    );
   } else {
-    lostScore.push(parseInt(1));
-    setTimeout(function () {
-      alert("you lose!");
-    }, 2000);
+    let selectSound = new Audio();
+    selectSound.src = "./attack.mp3";
+    selectSound.play();
+
+    userPlayer = userPlayer[0];
+    enemyPlayer = enemyPlayer[0];
+    let playerDamage = parseInt(userPlayer.attack - enemyPlayer.defend);
+    let enemyDamage = parseInt(enemyPlayer.attack - userPlayer.defend);
+
+    if (playerDamage > enemyDamage) {
+      winScore.push(parseInt(1));
+      setTimeout(function () {
+        alert("You won!");
+      }, 2000);
+    } else {
+      lostScore.push(parseInt(1));
+      setTimeout(function () {
+        alert("you lose!");
+      }, 2000);
+    }
   }
 
   const showScore = () => {
@@ -208,46 +231,30 @@ const figthResult = () => {
   showScore();
 };
 
-function idChecker(id) {
-  if (document.body.contains(document.getElementById(id))) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 function emptyBattleContainer() {
-  let resetSound = new Audio();
-  resetSound.src = "./sword.mp3";
-  resetSound.play();
+  let enemyCard = document.getElementById("enemy-id");
+  enemyDiv.removeChild(enemyCard);
+  let playerCard = document.getElementById("player-id");
+  playerDiv.removeChild(playerCard);
   enemyCharacterArr.splice(playerCharIndex, 0, removedIdCharacter);
   enemyCharacterArr = [];
-  userPlayer = [];
   enemyPlayer = [];
-
+  userPlayer = [];
   indexOfSelectedPlayer = [];
   getAllCharacters();
 }
 
 const resetPlay = () => {
+  let resetSound = new Audio();
+  resetSound.src = "./sword.mp3";
+  resetSound.play();
   //work on a bug!
-  let enemyStatus = idChecker("enemy-id");
-  let playerStatus = idChecker("player-id");
-
-  if (enemyStatus == false) {
-    alert("Please PRESS JOIN BATTLE to add an enemy!");
+  if (enemyStatus == false && playerStatus == false) {
+    return alert(
+      "Please SELECT you champion and PRESS JOIN BATTLE to add an enemy!"
+    );
   } else {
-    let enemyCard = document.getElementById("enemy-id");
-    enemyDiv.removeChild(enemyCard);
-    emptyBattleContainer("enemy-id");
-  }
-
-  if (playerStatus == false) {
-    alert("Please SELECT your champion!");
-  } else {
-    let playerCard = document.getElementById("player-id");
-    playerDiv.removeChild(playerCard);
-    emptyBattleContainer("player-id");
+    emptyBattleContainer();
   }
 };
 
