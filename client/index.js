@@ -114,7 +114,7 @@ const getAllCharacters = () =>
 function createCharacterCard(characters) {
   const characterCard = document.createElement("div");
   characterCard.classList.add("player-card");
-  characterCard.setAttribute("id", `${characters[i]}`)
+  characterCard.setAttribute("id", `${characters}`)
   characterCard.innerHTML = `<section id=${characters.id} ><img alt='char img' src=${characters.imgUrl} class="character-img"/>
     <p class="character-name">Name: ${characters.name}</p>
     <p class="character-health">Health: ${characters.health}</p>
