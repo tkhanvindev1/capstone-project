@@ -5,6 +5,7 @@ const enemyDiv = document.getElementById("enemy-character-div");
 const playBtn = document.getElementById("play-button");
 const attackBtn = document.getElementById("attack-button");
 const resetBtn = document.getElementById("play-again");
+const battleContainer = document.getElementById("battle-container")
 
 const userGreeting = document.getElementById("username-greeting");
 const usernameInput = document.getElementById("username");
@@ -131,13 +132,19 @@ function removeCharacterCard(id) {
   characterContainer.removeChild(playerCard);
 }
 
+function scrollToBattleContainer (element) {
+  e.preventDefault();
+  element.scroll({ top: element.scrollHeigth, behavior: "smooth"})
+}
+
 function showPlayerChar(id) {
   removeCharacterCard(id);
+  scrollToBattleContainer(battleContainer)
 
   let resetSound = new Audio();
   resetSound.src = "./sword.mp3";
   resetSound.play();
-  
+
   if (indexOfSelectedPlayer.length !== 0) {
     let playerCard = document.getElementById("player-id");
     playerDiv.removeChild(playerCard);
