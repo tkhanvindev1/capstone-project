@@ -112,6 +112,7 @@ const getAllCharacters = () =>
     .catch(errCallback);
 
 function createCharacterCard(characters) {
+  console.log(characters)
   const characterCard = document.createElement("div");
   characterCard.classList.add("player-card");
   characterCard.setAttribute("id", `${characters}`)
