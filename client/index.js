@@ -184,15 +184,10 @@ function idChecker(id) {
   }
 }
 
-function idChecker(id) {
-  if (document.body.contains(document.getElementById(id))) {
-    return true;
-  } else {
-    return false;
-  }
-}
 let enemyStatus = idChecker("enemy-id");
 let playerStatus = idChecker("player-id");
+console.log(enemyStatus)
+console.log(playerStatus)
 
 const figthResult = () => {
   if (enemyStatus == false && playerStatus == false) {
@@ -245,15 +240,15 @@ function emptyBattleContainer() {
 }
 
 const resetPlay = () => {
-  let resetSound = new Audio();
-  resetSound.src = "./sword.mp3";
-  resetSound.play();
   //work on a bug!
-  if (enemyStatus == false && playerStatus == false) {
+  if (enemyStatus == false && playerStatus === false) {
     return alert(
       "Please SELECT you champion and PRESS JOIN BATTLE to add an enemy!"
     );
   } else {
+  let resetSound = new Audio();
+  resetSound.src = "./sword.mp3";
+  resetSound.play();
     emptyBattleContainer();
   }
 };
