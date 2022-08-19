@@ -133,6 +133,11 @@ function removeCharacterCard(id) {
 
 function showPlayerChar(id) {
   removeCharacterCard(id);
+
+  let resetSound = new Audio();
+  resetSound.src = "./sword.mp3";
+  resetSound.play();
+  
   if (indexOfSelectedPlayer.length !== 0) {
     let playerCard = document.getElementById("player-id");
     playerDiv.removeChild(playerCard);
