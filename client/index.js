@@ -5,7 +5,7 @@ const enemyDiv = document.getElementById("enemy-character-div");
 const playBtn = document.getElementById("play-button");
 const attackBtn = document.getElementById("attack-button");
 const resetBtn = document.getElementById("play-again");
-const battleContainer = document.getElementById("battle-container")
+const battleContainer = document.getElementById("battle-container");
 
 const userGreeting = document.getElementById("username-greeting");
 const usernameInput = document.getElementById("username");
@@ -132,17 +132,12 @@ function removeCharacterCard(id) {
   characterContainer.removeChild(playerCard);
 }
 
-function scrollToBattleContainer () {
-  console.log("scroll")
-var myElement = document.getElementById("battle-container");
-var viewPosition = myElement.offsetTop;
-document.getElementById("battle-container").scrollTop = viewPosition
+function putBackCharacterCard(id) {
+  getAllCharacters();
 }
 
 function showPlayerChar(id) {
   removeCharacterCard(id);
-  scrollToBattleContainer()
-
   let resetSound = new Audio();
   resetSound.src = "./sword.mp3";
   resetSound.play();
@@ -161,6 +156,7 @@ function showPlayerChar(id) {
     <p class="character-health">Health: ${selectedPlayer.health}</p>
     <p class="character-defend">Defend: ${selectedPlayer.defend}</p>
     <p class="character-attack">Attack: ${selectedPlayer.attack}</p>
+    <button class="new-char-btn" onclick ="putBackCharacterCard()">Change Champion</button>
     </select>
     `;
 
@@ -292,4 +288,4 @@ playBtn.addEventListener("click", showEnemyChar);
 submitBtn.addEventListener("click", createUser);
 attackBtn.addEventListener("click", figthResult);
 resetBtn.addEventListener("click", resetPlay);
-window.addEventListener("scroll", scrollToBattleContainer)
+window.addEventListener("scroll", scrollToBattleContainer);
