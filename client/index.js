@@ -145,8 +145,7 @@ function showPlayerChar(id) {
   resetSound.src = "./sword.mp3";
   resetSound.play();
 
-  if (indexOfSelectedPlayer.length !== 0) {
-    putBackCharacterCard();
+  if (indexOfSelectedPlayer.length !== 0) {  
   }
   indexOfSelectedPlayer.push(id);
   let selectedPlayer = selectedCharacterArr[id];
@@ -158,6 +157,7 @@ function showPlayerChar(id) {
     <p class="character-health">Health: ${selectedPlayer.health}</p>
     <p class="character-defend">Defend: ${selectedPlayer.defend}</p>
     <p class="character-attack">Attack: ${selectedPlayer.attack}</p>
+    <button class="new-char-btn" onclick ="putBackCharacterCard(${selectedPlayer.id})">Change Champion</button>
     </div>
     `;
 
