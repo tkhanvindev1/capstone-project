@@ -159,7 +159,7 @@ img{
     transform: scale(1.1);
 }
 
-.char-btn {
+.char-btn, .new-char-btn {
     width: 200px;
     height: 40px;
     color: rgb(210, 210, 210);
@@ -167,6 +167,9 @@ img{
     border: 3px solid rgb(240, 199, 50);  
     box-shadow: 2px;
     
+}
+.new-char-btn{
+    background-color: brown;
 }
 
 @media(max-width){

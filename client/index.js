@@ -6,6 +6,7 @@ const playBtn = document.getElementById("play-button");
 const attackBtn = document.getElementById("attack-button");
 const resetBtn = document.getElementById("play-again");
 const battleContainer = document.getElementById("battle-container");
+const selectedPlayer = document.getElementById("selected-card");
 
 const userGreeting = document.getElementById("username-greeting");
 const usernameInput = document.getElementById("username");
@@ -133,6 +134,8 @@ function removeCharacterCard(id) {
 }
 
 function putBackCharacterCard(id) {
+  let selectedCard = document.getElementById(`selected${id}`);
+  selectedPlayer.removeChild(selectedCard);
   getAllCharacters();
 }
 
@@ -149,15 +152,15 @@ function showPlayerChar(id) {
   indexOfSelectedPlayer.push(id);
   let selectedPlayer = selectedCharacterArr[id];
   const selectedPlayerCard = document.createElement("div");
-  selectedPlayerCard.classList.add("player-card");
+  selectedPlayerCard.classList.add("selected-card");
   selectedPlayerCard.setAttribute("id", "player-id");
-  selectedPlayerCard.innerHTML = `<section id=${selectedPlayer.id} ><img alt='char img' src=${selectedPlayer.imgUrl} class="character-img"/>
+  selectedPlayerCard.innerHTML = `<div id='selected${selectedPlayer.id}' ><img alt='char img' src=${selectedPlayer.imgUrl} class="character-img"/>
     <p class="character-name">Name: ${selectedPlayer.name}</p>
     <p class="character-health">Health: ${selectedPlayer.health}</p>
     <p class="character-defend">Defend: ${selectedPlayer.defend}</p>
     <p class="character-attack">Attack: ${selectedPlayer.attack}</p>
-    <button class="new-char-btn" onclick ="putBackCharacterCard()">Change Champion</button>
-    </select>
+    <button class="new-char-btn" onclick ="putBackCharacterCard(${selectedPlayer.id})">Change Champion</button>
+    </div>
     `;
 
   playerDiv.appendChild(selectedPlayerCard);
@@ -288,4 +291,3 @@ playBtn.addEventListener("click", showEnemyChar);
 submitBtn.addEventListener("click", createUser);
 attackBtn.addEventListener("click", figthResult);
 resetBtn.addEventListener("click", resetPlay);
-window.addEventListener("scroll", scrollToBattleContainer);
