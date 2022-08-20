@@ -133,9 +133,9 @@ function removeCharacterCard(id) {
   characterContainer.removeChild(playerCard);
 }
 
-function putBackCharacterCard(id) {
+function putBackCharacterCard() {
   let selectedCard = document.getElementById(`selected${id}`);
-  selectedPlayer.removeChild(selectedCard);
+  playerDiv.removeChild(selectedCard);
   getAllCharacters();
 }
 
@@ -152,7 +152,7 @@ function showPlayerChar(id) {
   indexOfSelectedPlayer.push(id);
   let selectedPlayer = selectedCharacterArr[id];
   const selectedPlayerCard = document.createElement("div");
-  selectedPlayerCard.classList.add("selected-card");
+  selectedPlayerCard.classList.add("player-card");
   selectedPlayerCard.setAttribute("id", "player-id");
   selectedPlayerCard.innerHTML = `<div id='selected${selectedPlayer.id}' ><img alt='char img' src=${selectedPlayer.imgUrl} class="character-img"/>
     <p class="character-name">Name: ${selectedPlayer.name}</p>
