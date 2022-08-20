@@ -133,9 +133,9 @@ function removeCharacterCard(id) {
   characterContainer.removeChild(playerCard);
 }
 
-function putBackCharacterCard(id) {
-  let selectedCard = document.getElementById(`selected${id}`);
-  playerDiv.removeChild(selectedCard);
+function putBackCharacterCard() {
+  let playerCard = document.getElementById("player-id");
+  playerDiv.removeChild(playerCard);
   getAllCharacters();
 }
 
@@ -146,20 +146,18 @@ function showPlayerChar(id) {
   resetSound.play();
 
   if (indexOfSelectedPlayer.length !== 0) {
-    let playerCard = document.getElementById("player-id");
-    playerDiv.removeChild(playerCard);
+    putBackCharacterCard();
   }
   indexOfSelectedPlayer.push(id);
   let selectedPlayer = selectedCharacterArr[id];
   const selectedPlayerCard = document.createElement("div");
   selectedPlayerCard.classList.add("player-card");
   selectedPlayerCard.setAttribute("id", "player-id");
-  selectedPlayerCard.innerHTML = `<div id='selected${selectedPlayer.id}' ><img alt='char img' src=${selectedPlayer.imgUrl} class="character-img"/>
+  selectedPlayerCard.innerHTML = `<div id='${selectedPlayer.id}' ><img alt='char img' src=${selectedPlayer.imgUrl} class="character-img"/>
     <p class="character-name">Name: ${selectedPlayer.name}</p>
     <p class="character-health">Health: ${selectedPlayer.health}</p>
     <p class="character-defend">Defend: ${selectedPlayer.defend}</p>
     <p class="character-attack">Attack: ${selectedPlayer.attack}</p>
-    <button class="new-char-btn" onclick ="putBackCharacterCard(${selectedPlayer.id})">Change Champion</button>
     </div>
     `;
 
