@@ -3,7 +3,7 @@ const showBtn = document.getElementById("show-btn");
 const playerDiv = document.getElementById("player-character-div");
 const enemyDiv = document.getElementById("enemy-character-div");
 const playBtn = document.getElementById("play-button");
-const attackBtn = document.getElementById("attack-button");
+// const attackBtn = document.getElementById("attack-button");
 const resetBtn = document.getElementById("play-again");
 const battleContainer = document.getElementById("battle-container");
 const selectedPlayer = document.getElementById("selected-card");
@@ -157,7 +157,7 @@ function showPlayerChar(id) {
     <p class="character-health">Health: ${selectedPlayer.health}</p>
     <p class="character-defend">Defend: ${selectedPlayer.defend}</p>
     <p class="character-attack">Attack: ${selectedPlayer.attack}</p>
-    <button class="new-char-btn" onclick ="putBackCharacterCard(${selectedPlayer.id})">Change Champion</button>
+    <button class="new-char-btn" onclick ="putBackCharacterCard(${selectedPlayer.id})">CHANGE</button>
     </div>
     `;
 
@@ -185,6 +185,7 @@ function showEnemyChar() {
     <p class="character-health">Health: ${randomEnemyCharacter.health}</p>
     <p class="character-defend">Defend: ${randomEnemyCharacter.defend}</p>
     <p class="character-attack">Attack: ${randomEnemyCharacter.attack}</p>
+    <button class="new-char-btn" onclick ="figthResult()">ATTACK</button>
     </select>
     `;
   let battleSound = new Audio();
