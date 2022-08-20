@@ -133,7 +133,7 @@ function removeCharacterCard(id) {
   characterContainer.removeChild(playerCard);
 }
 
-function putBackCharacterCard() {
+function putBackCharacterCard(id) {
   let selectedCard = document.getElementById(`selected${id}`);
   playerDiv.removeChild(selectedCard);
   getAllCharacters();
